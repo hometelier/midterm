@@ -6,9 +6,16 @@ export { cal } from './cal.js';
 export { telfmt, searchByKoreanInitialSound } from './regexp.js';
 
 Array.prototype.mapBy = function (k) {
-  // 이 부분을 작성하시오.
+  return this.map((a) => a[k]);
 };
 
 Array.prototype.groupBy = function (gfn) {
-  // 이 부분을 작성하시오.
+  const ret = {};
+  for (const a of this) {
+    const k = gfn(a);
+    ret[k] ||= [];
+    ret[k].push(a);
+  }
+
+  return ret;
 };

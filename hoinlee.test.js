@@ -9,7 +9,7 @@ import {
   cal,
   telfmt,
   searchByKoreanInitialSound,
-} from './tt/index.js';
+} from './hoinlee/index.js';
 
 console.log('Name is ');
 console.log('Email is ');
@@ -129,7 +129,7 @@ assert.deepStrictEqual(alist.size, 0);
 assert.deepStrictEqual(alist.isEmpty, true);
 
 Array.prototype.mapBy = function (k) {
-  return this.map(a => a[k]);
+  return this.map((a) => a[k]);
 };
 assert.deepStrictEqual(users.mapBy('id'), [1, 2, 3, 4, 7, 6, 5]);
 assert.deepStrictEqual(users.mapBy('name'), [
